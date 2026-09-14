@@ -104,10 +104,8 @@ p { margin: 0 0 1em; max-width: 68ch; }
 /* ---------------- Header / nav ---------------- */
 
 header.site-header {
-  border-bottom: 1px solid rgba(216, 220, 226, 0.9);
-  background: rgba(250, 249, 246, 0.96);
-  box-shadow: 0 2px 14px rgba(22, 35, 61, 0.04);
-  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -117,8 +115,7 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 12px 28px;
+  padding: 16px 28px;
   max-width: var(--maxw);
   margin: 0 auto;
 }
@@ -133,58 +130,44 @@ header.site-header {
 
 .brand-word {
   font-family: var(--font-head);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.1;
 }
-.brand-word span { display: block; margin-top: 3px; font-size: 0.58rem; font-weight: 400; color: var(--steel); letter-spacing: 0.08em; }
+.brand-word span { display: block; font-size: 0.6rem; font-weight: 400; color: var(--steel); letter-spacing: 0.08em; }
 
 nav.primary-nav ul {
   list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 2px;
+  gap: 4px;
   margin: 0;
   padding: 0;
 }
 
 nav.primary-nav a {
   display: inline-block;
-  padding: 8px 9px;
+  padding: 8px 12px;
   color: var(--ink-soft);
   text-decoration: none;
-  font-size: 0.82rem;
-  font-weight: 500;
+  font-size: 0.92rem;
   border-bottom: 2px solid transparent;
-  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
-nav.primary-nav a:hover {
-  color: var(--ink);
-  background: var(--paper-alt);
-}
+nav.primary-nav a:hover { color: var(--ink); }
 
 nav.primary-nav a.active {
   color: var(--ink);
   border-bottom-color: var(--brass);
-  background: var(--paper-alt);
 }
 
 .nav-toggle {
   display: none;
-  flex: none;
-  background: var(--paper);
+  background: none;
   border: 1px solid var(--line);
-  border-radius: 3px;
-  padding: 7px 9px;
+  border-radius: 4px;
+  padding: 8px 10px;
   cursor: pointer;
-  transition: border-color 160ms ease, background-color 160ms ease;
-}
-.nav-toggle:hover {
-  border-color: var(--brass);
-  background: var(--paper-alt);
 }
 .nav-toggle span, .nav-toggle::before, .nav-toggle::after {
   display: block;
@@ -202,24 +185,14 @@ nav.primary-nav a.active {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(250, 249, 246, 0.98);
+    background: var(--paper);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 10px 18px rgba(22, 35, 61, 0.07);
   }
   nav.primary-nav.open { display: block; }
-  nav.primary-nav ul { align-items: stretch; flex-direction: column; gap: 0; padding: 8px 28px 20px; }
-  nav.primary-nav a { display: block; border-bottom: none; border-left: 2px solid transparent; padding: 10px 12px; }
-  nav.primary-nav a:hover { background: var(--paper-alt); }
+  nav.primary-nav ul { flex-direction: column; padding: 8px 28px 20px; }
+  nav.primary-nav a { border-bottom: none; border-left: 2px solid transparent; padding: 10px 8px; }
   nav.primary-nav a.active { border-left-color: var(--brass); border-bottom-color: transparent; }
   .nav-toggle { display: block; }
-}
-
-@media (max-width: 520px) {
-  .nav-wrap { padding: 10px 18px; }
-  .brand { gap: 9px; }
-  .brand-word { font-size: 1rem; }
-  .brand-word span { font-size: 0.52rem; letter-spacing: 0.06em; }
-  .nav-toggle { padding: 6px 8px; }
 }
 
 /* ---------------- Hero ---------------- */
@@ -478,6 +451,32 @@ table.data tr:hover td { background: var(--paper-alt); }
   border-radius: 2px;
 }
 .form-field input:focus, .form-field textarea:focus { border-color: var(--steel); }
+
+/* ---------------- Social links ---------------- */
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.social-links a:hover {
+  color: var(--brass-dark);
+  border-color: var(--brass-dark);
+  background: var(--paper);
+}
+.social-links svg { width: 18px; height: 18px; }
 
 /* ---------------- Footer ---------------- */
 
